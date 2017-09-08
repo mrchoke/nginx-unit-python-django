@@ -5,10 +5,8 @@ nginx unit playground for django app
 
 
 ```
-docker run  \
-   -itd \
-   --name unit-django \ 
-   -p 8080:8080  \
+docker run   -itd \
+   --name unit-django   -p 8080:8080  \
    mrchoke/nginx-unit-django:1.11.4
 ```
 
@@ -17,7 +15,7 @@ docker run  \
 
 ```
 docker exec  unit-django  \
-   curl  http://localhost:8000 
+   curl  -s http://localhost:8000 
 
 ```
 
@@ -36,13 +34,13 @@ docker exec  unit-django  \
 
 ```
 docker exec  unit-django  \
-   curl -XPUT http://localhost:8000 -d@/srv/app/config.json
+   curl -s -XPUT http://localhost:8000 -d@/srv/app/config.json
 ```
 *test*
 
 ```
 docker exec  unit-django  \
-   curl  http://localhost:8000 
+   curl  -s http://localhost:8000 
 
 ```
 
@@ -80,6 +78,17 @@ http://localhost:8080
 username: admin
 password: unit1234
 ```
+
+# Django
+
+```
+docker exec -it  unit-django  bash 
+```
+```
+./manage.py
+
+```
+
 
 # Docker Hub
 
