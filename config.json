@@ -1,0 +1,17 @@
+{
+     "listeners": {
+         "*:8080": {
+             "application": "django"
+         }
+     },
+     "applications": {
+        "django": {
+		"type": "python",
+     		"workers": 3,
+    		"module": "wsgi",
+     		"user": "root",
+     		"group": "root",
+     		"path": "/srv/app"
+   	}
+   }
+}
